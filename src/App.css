@@ -37,7 +37,7 @@
   }
 }
 
-:root {
+.App {
   --bg-page: #e8e9eb;
   --bg-app: #f5f6f8;
   --bg-card: #ffffff;
@@ -55,9 +55,13 @@
   --header-bg: #ffffff;
   --icon-bg: #f8fafc;
   --accent-color: #3b82f6;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-[data-theme='dark'] {
+.App[data-theme='dark'] {
   --bg-page: #0f172a;
   --bg-app: #020617;
   --bg-card: #1e293b;
@@ -86,4 +90,96 @@
 
 [data-theme='dark'] input::placeholder {
   color: var(--text-muted);
+}
+/* Responsive Dashboard Styles */
+.dashboard-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 24px 40px !important;
+  gap: 16px !important;
+  flex-direction: row !important;
+}
+
+.dashboard-header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.dashboard-user-info {
+  text-align: right !important;
+}
+
+.dashboard-main {
+  padding: 40px !important;
+}
+
+.dashboard-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 24px !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 16px !important;
+  }
+
+  .dashboard-header-right {
+    width: 100% !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  .dashboard-user-info {
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  .dashboard-main {
+    padding: 24px 16px !important;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-list-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .dashboard-institute-value {
+    word-break: break-word !important;
+    text-align: left !important;
+  }
+}
+
+.dashboard-list-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.header-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 24px 40px !important;
+  gap: 16px !important;
+  flex-direction: row !important;
+  background-color: var(--header-bg, #ffffff);
+  box-shadow: 0 1px 3px var(--shadow-light, rgba(0,0,0,0.05));
+  flex-wrap: wrap !important;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 16px !important;
+    gap: 16px !important;
+  }
 }
